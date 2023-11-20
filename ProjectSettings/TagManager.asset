@@ -11,8 +11,8 @@ TagManager:
   - 
   - Water
   - UI
-  - 
-  - 
+  - Player
+  - Land
   - 
   - 
   - 
@@ -38,6 +38,12 @@ TagManager:
   - 
   - 
   m_SortingLayers:
+  - name: Player
+    uniqueID: 745334383
+    locked: 0
   - name: Default
     uniqueID: 0
+    locked: 0
+  - name: Land
+    uniqueID: 2043095773
     locked: 0
