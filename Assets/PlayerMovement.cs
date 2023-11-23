@@ -5,7 +5,8 @@ using UnityEngine;
 public class PlayerMovement : MonoBehaviour
 {
     public float gridSize = 1f;
-
+    public GameManager GM;
+    public FarmGrid farmScript;
     void Update()
     {
         HandleInput();
@@ -36,10 +37,14 @@ public class PlayerMovement : MonoBehaviour
         Vector3 newPosition = transform.position + direction * gridSize;
 
         // Clamp the new position within the farm grid bounds
-        newPosition.x = Mathf.Clamp(newPosition.x, -1, 1);
-        newPosition.y = Mathf.Clamp(newPosition.y, -1, 1);
+        newPosition.x = Mathf.Clamp(newPosition.x, -2, 2);
+        newPosition.y = Mathf.Clamp(newPosition.y, -2, 2);
 
         transform.position = newPosition;
+
+        farmScript.UpdateAllCells();
+        GM.turn++;
+        GM.CheckForWinCondition();
     }
 }
 
