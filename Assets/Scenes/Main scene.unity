@@ -123,6 +123,52 @@ NavMeshSettings:
     debug:
       m_Flags: 0
   m_NavMeshData: {fileID: 0}
+--- !u!1 &467852888
+GameObject:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  serializedVersion: 6
+  m_Component:
+  - component: {fileID: 467852890}
+  - component: {fileID: 467852889}
+  m_Layer: 0
+  m_Name: GM
+  m_TagString: Untagged
+  m_Icon: {fileID: 0}
+  m_NavMeshLayer: 0
+  m_StaticEditorFlags: 0
+  m_IsActive: 1
+--- !u!114 &467852889
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467852888}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: a4d7ddd02edbdcf40b72f092d86c6bc8, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  farmGrid: {fileID: 692944466}
+  turn: 0
+--- !u!4 &467852890
+Transform:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 467852888}
+  serializedVersion: 2
+  m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
+  m_LocalPosition: {x: 0, y: 0, z: 0}
+  m_LocalScale: {x: 1, y: 1, z: 1}
+  m_ConstrainProportionsScale: 0
+  m_Children: []
+  m_Father: {fileID: 0}
+  m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &692944465
 GameObject:
   m_ObjectHideFlags: 0
@@ -153,8 +199,10 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   gridCellPrefab: {fileID: 186576261484374173, guid: 47b923873f9639543a1c8a52643f497a, type: 3}
-  gridSize: 4
+  gridSize: 5
+  originalLocation: -2
   cellSize: 1
+  FarmGridList: []
 --- !u!4 &692944467
 Transform:
   m_ObjectHideFlags: 0
@@ -256,7 +304,7 @@ Transform:
   m_GameObject: {fileID: 792803853}
   serializedVersion: 2
   m_LocalRotation: {x: 0, y: 0, z: 0, w: 1}
-  m_LocalPosition: {x: 0.87, y: 0.84, z: -10}
+  m_LocalPosition: {x: 0, y: 0, z: -10}
   m_LocalScale: {x: 1, y: 1, z: 1}
   m_ConstrainProportionsScale: 0
   m_Children: []
@@ -270,6 +318,14 @@ PrefabInstance:
     serializedVersion: 3
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: -21767821998408166, guid: fa532395b6683684f834c4a31c0661c1, type: 3}
+      propertyPath: GM
+      value: 
+      objectReference: {fileID: 467852889}
+    - target: {fileID: -21767821998408166, guid: fa532395b6683684f834c4a31c0661c1, type: 3}
+      propertyPath: farmScript
+      value: 
+      objectReference: {fileID: 692944466}
     - target: {fileID: 4229009144546719633, guid: fa532395b6683684f834c4a31c0661c1, type: 3}
       propertyPath: m_LocalScale.x
       value: 0.3
@@ -334,3 +390,4 @@ SceneRoots:
   - {fileID: 792803856}
   - {fileID: 692944467}
   - {fileID: 1232731007}
+  - {fileID: 467852890}
