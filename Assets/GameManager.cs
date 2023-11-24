@@ -19,7 +19,7 @@ public class GameManager : MonoBehaviour
             }
         }
 
-        if (grownCarrotCount >= 3)
+        if (grownCarrotCount >= 10)
         {
             Debug.Log("You win!");
             // Implement your win logic here
