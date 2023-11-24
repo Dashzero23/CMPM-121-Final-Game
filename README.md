@@ -23,4 +23,6 @@ Dash is hoping to improve on his Blender skills while Gabe and Jeevi are looking
 [F0.d] There are sun and water level and sun is randomly generated/removed every turn, while water is always true once a tile has water once  
 [F0.e] There are 2 type of plants (carrot and grass) and 2 growth level (seed and grown)  
 [F0.f] Currently the plant grow if the tile has both water and sun and the growth level is seed
-[F0.g] The play scenario is completed if the player has at least 10 grown carrots
+[F0.g] The play scenario is completed if the player has at least 10 grown carrots  
+## Reflection
+Our plans changed quite a bit as we shifted Dash into a helper in developing the main mechanics while Gabe is now focused on player interactions for latter requirements. We decided to not use Blender as it would take more time and less efficient than simply using Piskel for 2D arts so Dash can spend more time helping the code side.
