@@ -35,7 +35,24 @@ public class FarmGrid : MonoBehaviour
             }
         }
     }
+    public GridCell GetCellAtPosition(Vector3 position)
+    {
+        // Find the closest cell to the specified position
+        float closestDistance = float.MaxValue;
+        GridCell closestCell = null;
 
+        foreach (var gridCell in FarmGridList)
+        {
+            float distance = Vector3.Distance(gridCell.transform.position, position);
+            if (distance < closestDistance)
+            {
+                closestDistance = distance;
+                closestCell = gridCell;
+            }
+        }
+
+        return closestCell;
+    }
     public void UpdateAllCells()
     {
         foreach (var gridCell in FarmGridList)
@@ -69,4 +86,5 @@ public class FarmGrid : MonoBehaviour
             }
         }
     }
+
 }

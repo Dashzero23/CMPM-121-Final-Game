@@ -4,7 +4,7 @@ MonoImporter:
   externalObjects: {}
   serializedVersion: 2
   defaultReferences:
-  - cellPrefab: {fileID: 186576261484374173, guid: 47b923873f9639543a1c8a52643f497a, type: 3}
+  - gridCellPrefab: {fileID: 5789490250955142545, guid: 814994896a7282e498e473cb8c867346, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

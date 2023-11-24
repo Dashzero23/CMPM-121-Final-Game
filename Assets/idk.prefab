@@ -10,10 +10,9 @@ GameObject:
   m_Component:
   - component: {fileID: 4229009144546719633}
   - component: {fileID: 4470339882107364434}
-  - component: {fileID: -21767821998408166}
-  - component: {fileID: -2269546664326142110}
+  - component: {fileID: -956691330653981616}
   m_Layer: 6
-  m_Name: Player
+  m_Name: idk
   m_TagString: Untagged
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
@@ -86,7 +85,7 @@ SpriteRenderer:
   m_WasSpriteAssigned: 1
   m_MaskInteraction: 0
   m_SpriteSortPoint: 0
---- !u!114 &-21767821998408166
+--- !u!114 &-956691330653981616
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -95,22 +94,11 @@ MonoBehaviour:
   m_GameObject: {fileID: 5789490250955142545}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 83cc554bf56cfe54c846e68360b618cb, type: 3}
+  m_Script: {fileID: 11500000, guid: b00cb8586c7dd064ba0660e07aec6252, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  gridSize: 1
-  GM: {fileID: 0}
-  farmScript: {fileID: 0}
---- !u!114 &-2269546664326142110
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 5789490250955142545}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb3158471096d9243bba69edcf8c7d72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  farmGrid: {fileID: -956691330653981616, guid: 814994896a7282e498e473cb8c867346, type: 3}
+  gridCellPrefab: {fileID: 5789490250955142545}
+  gridSize: 5
+  originalLocation: -2.5
+  cellSize: 1
+  FarmGridList: []

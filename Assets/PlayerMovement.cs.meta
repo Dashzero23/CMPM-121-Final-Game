@@ -3,7 +3,9 @@ guid: 83cc554bf56cfe54c846e68360b618cb
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - GM: {instanceID: 0}
+  - farmScript: {fileID: -956691330653981616, guid: 814994896a7282e498e473cb8c867346, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

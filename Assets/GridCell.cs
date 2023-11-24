@@ -49,7 +49,7 @@ void Start()
         UpdateCellVisuals();
     }
 
-    void UpdateCellVisuals()
+    public void UpdateCellVisuals()
     {
         // Adjust the color or sprite based on the current content
         if (plantType == PlantType.Grass)
@@ -92,7 +92,6 @@ void Start()
         }
     }
 
-    // Example method to change the content of the cell
     public void ChangeCellContent(bool newWater, bool newSun, PlantType newPlantType, GrowthLevel newGrowthLevel)
     {
         water = newWater;
