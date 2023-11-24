@@ -12,7 +12,6 @@ GameObject:
   - component: {fileID: 3748143368532118260}
   - component: {fileID: -988371323288300151}
   - component: {fileID: -824664357499508055}
-  - component: {fileID: -7052736959468836853}
   m_Layer: 7
   m_Name: Farmland
   m_TagString: Untagged
@@ -101,6 +100,7 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   spriteRenderer: {fileID: 3748143368532118260}
+  CurPosition: {fileID: 8533952005303137547}
   water: 0
   sun: 0
   plantType: 0
@@ -119,19 +119,6 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   farmGrid: {fileID: -956691330653981616, guid: 814994896a7282e498e473cb8c867346, type: 3}
   turn: 0
---- !u!114 &-7052736959468836853
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 186576261484374173}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: eb3158471096d9243bba69edcf8c7d72, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  farmGrid: {fileID: -956691330653981616, guid: 814994896a7282e498e473cb8c867346, type: 3}
 --- !u!1 &8096778170460705952
 GameObject:
   m_ObjectHideFlags: 0

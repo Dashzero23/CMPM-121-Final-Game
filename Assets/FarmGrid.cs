@@ -35,24 +35,26 @@ public class FarmGrid : MonoBehaviour
             }
         }
     }
-    public GridCell GetCellAtPosition(Vector3 position)
+public GridCell GetCellAtPlayerPosition(Vector3 playerPosition)
+{
+    // Convert player position to grid coordinates
+    int playerX = Mathf.RoundToInt(playerPosition.x / cellSize);
+    int playerY = Mathf.RoundToInt(playerPosition.y / cellSize);
+
+    // Iterate through the grid cells and find the one matching the player's position
+    foreach (var gridCell in FarmGridList)
     {
-        // Find the closest cell to the specified position
-        float closestDistance = float.MaxValue;
-        GridCell closestCell = null;
-
-        foreach (var gridCell in FarmGridList)
+        Vector2Int cellPosition = gridCell.GetCellPosition();
+        
+        if (cellPosition.x == playerX && cellPosition.y == playerY)
         {
-            float distance = Vector3.Distance(gridCell.transform.position, position);
-            if (distance < closestDistance)
-            {
-                closestDistance = distance;
-                closestCell = gridCell;
-            }
+            return gridCell; // Found the cell the player is standing on
         }
-
-        return closestCell;
     }
+
+    return null; // Player is not on any cell (outside the grid, for example)
+}
+
     public void UpdateAllCells()
     {
         foreach (var gridCell in FarmGridList)
@@ -86,5 +88,4 @@ public class FarmGrid : MonoBehaviour
             }
         }
     }
-
 }

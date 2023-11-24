@@ -18,7 +18,7 @@ public class GridCell : MonoBehaviour
     }
 
     public SpriteRenderer spriteRenderer;
-
+    public Transform CurPosition;
     public bool water = false;
     public bool sun = false;
     public PlantType plantType;
@@ -100,5 +100,14 @@ void Start()
         growthLevel = newGrowthLevel;
 
         UpdateCellVisuals();
+    }
+
+    public Vector2Int GetCellPosition()
+    {
+        // Assuming the cell position is in world space, convert it to grid coordinates
+        int x = Mathf.RoundToInt(transform.position.x);
+        int y = Mathf.RoundToInt(transform.position.y);
+
+        return new Vector2Int(x, y);
     }
 }

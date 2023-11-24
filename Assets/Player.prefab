@@ -11,7 +11,7 @@ GameObject:
   - component: {fileID: 4229009144546719633}
   - component: {fileID: 4470339882107364434}
   - component: {fileID: -21767821998408166}
-  - component: {fileID: -2269546664326142110}
+  - component: {fileID: -6210582549677076256}
   m_Layer: 6
   m_Name: Player
   m_TagString: Untagged
@@ -101,7 +101,7 @@ MonoBehaviour:
   gridSize: 1
   GM: {fileID: 0}
   farmScript: {fileID: 0}
---- !u!114 &-2269546664326142110
+--- !u!114 &-6210582549677076256
 MonoBehaviour:
   m_ObjectHideFlags: 0
   m_CorrespondingSourceObject: {fileID: 0}
@@ -113,4 +113,4 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: eb3158471096d9243bba69edcf8c7d72, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  farmGrid: {fileID: -956691330653981616, guid: 814994896a7282e498e473cb8c867346, type: 3}
+  farmGrid: {fileID: 0}
