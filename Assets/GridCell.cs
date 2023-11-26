@@ -18,6 +18,7 @@ public class GridCell : MonoBehaviour
         Grown
     }
 
+// SoA
     public struct CellState
     {
         public bool water;
@@ -45,8 +46,6 @@ void Start()
 
     InitializeCell();
 }
-
-
     public void InitializeCell()
     {
         // Set initial values
@@ -127,7 +126,7 @@ void Start()
         cellStateHistory.Add(cellState);
     }
 
-        public void UndoCell()
+    public void UndoCell()
     {
         if (cellStateHistory.Count > 1)
         {
