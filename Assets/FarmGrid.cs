@@ -59,31 +59,31 @@ public GridCell GetCellAtPlayerPosition(Vector3 playerPosition)
     {
         foreach (var gridCell in FarmGridList)
         {
-            if (gridCell.plantType != GridCell.PlantType.None && gridCell.growthLevel == GridCell.GrowthLevel.Grown) {
-                gridCell.ChangeCellContent(true, Random.Range(0f, 1f) > 0.5f, gridCell.plantType, GridCell.GrowthLevel.Grown);
+            if (gridCell.cellState.plantType != GridCell.PlantType.None && gridCell.cellState.growthLevel == GridCell.GrowthLevel.Grown) {
+                gridCell.ChangeCellContent(true, Random.Range(0f, 1f) > 0.5f, gridCell.cellState.plantType, GridCell.GrowthLevel.Grown);
             }
 
-            else if (gridCell.plantType != GridCell.PlantType.None && gridCell.growthLevel == GridCell.GrowthLevel.Seed) {
-                if (gridCell.sun && gridCell.water) {
-                    gridCell.ChangeCellContent(true, Random.Range(0f, 1f) > 0.5f, gridCell.plantType, GridCell.GrowthLevel.Grown);
+            else if (gridCell.cellState.plantType != GridCell.PlantType.None && gridCell.cellState.growthLevel == GridCell.GrowthLevel.Seed) {
+                if (gridCell.cellState.sun && gridCell.cellState.water) {
+                    gridCell.ChangeCellContent(true, Random.Range(0f, 1f) > 0.5f, gridCell.cellState.plantType, GridCell.GrowthLevel.Grown);
                 }
 
-                else if (!gridCell.water) {
-                    gridCell.ChangeCellContent(Random.Range(0f, 1f) > 0.5f, Random.Range(0f, 1f) > 0.5f, gridCell.plantType, GridCell.GrowthLevel.Seed);
+                else if (!gridCell.cellState.water) {
+                    gridCell.ChangeCellContent(Random.Range(0f, 1f) > 0.5f, Random.Range(0f, 1f) > 0.5f, gridCell.cellState.plantType, GridCell.GrowthLevel.Seed);
                 }
 
                 else {
-                    gridCell.ChangeCellContent(true, Random.Range(0f, 1f) > 0.5f, gridCell.plantType, GridCell.GrowthLevel.Seed);
+                    gridCell.ChangeCellContent(true, Random.Range(0f, 1f) > 0.5f, gridCell.cellState.plantType, GridCell.GrowthLevel.Seed);
                 }
             }
 
             else {
-                if (!gridCell.water) {
-                    gridCell.ChangeCellContent(Random.Range(0f, 1f) > 0.5f, Random.Range(0f, 1f) > 0.5f, gridCell.plantType, GridCell.GrowthLevel.Seed);
+                if (!gridCell.cellState.water) {
+                    gridCell.ChangeCellContent(Random.Range(0f, 1f) > 0.5f, Random.Range(0f, 1f) > 0.5f, gridCell.cellState.plantType, GridCell.GrowthLevel.Seed);
                 }
 
                 else {
-                    gridCell.ChangeCellContent(true, Random.Range(0f, 1f) > 0.5f, gridCell.plantType, GridCell.GrowthLevel.Seed);
+                    gridCell.ChangeCellContent(true, Random.Range(0f, 1f) > 0.5f, gridCell.cellState.plantType, GridCell.GrowthLevel.Seed);
                 }
             }
         }

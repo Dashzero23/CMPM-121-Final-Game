@@ -13,7 +13,7 @@ public class GameManager : MonoBehaviour
 
         foreach (var gridCell in farmGrid.FarmGridList)
         {
-            if (gridCell.plantType == GridCell.PlantType.Carrot && gridCell.growthLevel == GridCell.GrowthLevel.Grown)
+            if (gridCell.cellState.plantType == GridCell.PlantType.Carrot && gridCell.cellState.growthLevel == GridCell.GrowthLevel.Grown)
             {
                 grownCarrotCount++;
             }
@@ -27,6 +27,13 @@ public class GameManager : MonoBehaviour
         else
         {
             Debug.Log("Not enough grown carrots yet.");
+        }
+    }
+
+    public void UndoFunction()
+    {
+        foreach (var gridCell in farmGrid.FarmGridList) {
+            gridCell.UndoCell();
         }
     }
 }

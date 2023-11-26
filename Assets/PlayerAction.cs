@@ -26,11 +26,11 @@ public class PlayerAction : MonoBehaviour
         // Find the corresponding cell in the farm grid
         GridCell currentCell = farmGrid.GetCellAtPlayerPosition(playerPosition);
         // Check if the plant is fully grown before collecting
-        if (currentCell.growthLevel == GridCell.GrowthLevel.Grown)
+        if (currentCell.cellState.growthLevel == GridCell.GrowthLevel.Grown)
         {
             // Do something with the collected cell, e.g., print its type
-            Debug.Log($"Collected {currentCell.plantType} at {playerPosition}");
-            currentCell.ChangeCellContent(currentCell.water, currentCell.sun, GridCell.PlantType.None, GridCell.GrowthLevel.Seed);
+            Debug.Log($"Collected {currentCell.cellState.plantType} at {playerPosition}");
+            currentCell.ChangeCellContent(currentCell.cellState.water, currentCell.cellState.sun, GridCell.PlantType.None, GridCell.GrowthLevel.Seed);
 
             // Update the visuals of the target cell
             currentCell.UpdateCellVisuals();
@@ -49,9 +49,9 @@ public class PlayerAction : MonoBehaviour
         // Find the corresponding cell in the farm grid
         GridCell targetCell = farmGrid.GetCellAtPlayerPosition(playerPosition);
         // Set the target cell to a light orange tile if the cell is empty
-        if (targetCell.plantType == GridCell.PlantType.None)
+        if (targetCell.cellState.plantType == GridCell.PlantType.None)
         {
-            targetCell.ChangeCellContent(targetCell.water, targetCell.sun, GridCell.PlantType.Carrot, GridCell.GrowthLevel.Seed);
+            targetCell.ChangeCellContent(targetCell.cellState.water, targetCell.cellState.sun, GridCell.PlantType.Carrot, GridCell.GrowthLevel.Seed);
 
             // Update the visuals of the target cell
             targetCell.UpdateCellVisuals();

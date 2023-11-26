@@ -1,6 +1,7 @@
 using System;
 using UnityEngine;
 using Random = UnityEngine.Random;
+using System.Collections.Generic;
 
 public class GridCell : MonoBehaviour
 {
@@ -17,13 +18,22 @@ public class GridCell : MonoBehaviour
         Grown
     }
 
+    public struct CellState
+    {
+        public bool water;
+        public bool sun;
+        public PlantType plantType;
+        public GrowthLevel growthLevel;
+    }
+
     public SpriteRenderer spriteRenderer;
     public Transform CurPosition;
-    public bool water = false;
-    public bool sun = false;
-    public PlantType plantType;
-    public GrowthLevel growthLevel;
 
+    // Define the structure to store cell state
+    public CellState cellState;
+
+    // Add a list to store cell state history
+    public List<CellState> cellStateHistory = new List<CellState>();
 void Start()
 {
     spriteRenderer = GetComponent<SpriteRenderer>();
@@ -40,10 +50,10 @@ void Start()
     public void InitializeCell()
     {
         // Set initial values
-        water = Random.Range(0f, 1f) > 0.5f;
-        sun = Random.Range(0f, 1f) > 0.5f;
-        plantType = (PlantType)Random.Range(0, System.Enum.GetValues(typeof(PlantType)).Length);
-        growthLevel = GrowthLevel.Seed; // Set initial growth level to seed
+        cellState.water = Random.Range(0f, 1f) > 0.5f;
+        cellState.sun = Random.Range(0f, 1f) > 0.5f;
+        cellState.plantType = (PlantType)Random.Range(0, System.Enum.GetValues(typeof(PlantType)).Length);
+        cellState.growthLevel = GrowthLevel.Seed; // Set initial growth level to seed
 
         // Update visual representation based on the initial values
         UpdateCellVisuals();
@@ -52,9 +62,9 @@ void Start()
     public void UpdateCellVisuals()
     {
         // Adjust the color or sprite based on the current content
-        if (plantType == PlantType.Grass)
+        if (cellState.plantType == PlantType.Grass)
         {
-            if (growthLevel == GrowthLevel.Seed)
+            if (cellState.growthLevel == GrowthLevel.Seed)
             {
                 spriteRenderer.color = new Color(0f, 1f, 0f, 0.5f); // Light green for seed
             }
@@ -63,9 +73,9 @@ void Start()
                 spriteRenderer.color = Color.green; // Full green for grown
             }
         }
-        else if (plantType == PlantType.Carrot)
+        else if (cellState.plantType == PlantType.Carrot)
         {
-            if (growthLevel == GrowthLevel.Seed)
+            if (cellState.growthLevel == GrowthLevel.Seed)
             {
                 spriteRenderer.color = new Color(1f, 0.647f, 0f, 0.5f); // Light orange for seed
             }
@@ -74,15 +84,15 @@ void Start()
                 spriteRenderer.color = new Color(1f, 0.647f, 0f); // Full orange for grown
             }
         }
-        else if (water && sun)
+        else if (cellState.water && cellState.sun)
         {
             spriteRenderer.color = new Color(0.545f, 0.271f, 0.075f); // Brown color
         }
-        else if (water)
+        else if (cellState.water)
         {
             spriteRenderer.color = Color.blue;
         }
-        else if (sun)
+        else if (cellState.sun)
         {
             spriteRenderer.color = Color.yellow;
         }
@@ -94,11 +104,12 @@ void Start()
 
     public void ChangeCellContent(bool newWater, bool newSun, PlantType newPlantType, GrowthLevel newGrowthLevel)
     {
-        water = newWater;
-        sun = newSun;
-        plantType = newPlantType;
-        growthLevel = newGrowthLevel;
+        cellState.water = newWater;
+        cellState.sun = newSun;
+        cellState.plantType = newPlantType;
+        cellState.growthLevel = newGrowthLevel;
 
+        SaveCellState();
         UpdateCellVisuals();
     }
 
@@ -109,5 +120,21 @@ void Start()
         int y = Mathf.RoundToInt(transform.position.y);
 
         return new Vector2Int(x, y);
+    }
+
+        void SaveCellState()
+    {
+        cellStateHistory.Add(cellState);
+    }
+
+        public void UndoCell()
+    {
+        if (cellStateHistory.Count > 1)
+        {
+            // Remove the last state (current state) and apply the previous state
+            cellStateHistory.RemoveAt(cellStateHistory.Count - 1);
+            cellState = cellStateHistory[cellStateHistory.Count - 1];
+            UpdateCellVisuals();
+        }
     }
 }
