@@ -3,7 +3,15 @@ guid: b0bb4f05350a72f4aa48248dad1073f2
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - spriteRenderer: {instanceID: 0}
+  - CurPosition: {instanceID: 0}
+  - GrassSeed: {fileID: 21300000, guid: 792e7f40ffd5ead44af5949f40be4999, type: 3}
+  - Grass: {fileID: 21300000, guid: c5d2def971acdd148afeeb0173172806, type: 3}
+  - CarrotSeed: {fileID: 21300000, guid: d5f833f1551ca9a479e5ca7c96158990, type: 3}
+  - Carrot: {fileID: 21300000, guid: 97f3bdc78c5170c44bd0135ce210819b, type: 3}
+  - WetDirt: {fileID: 21300000, guid: 887090c0239e98141b3a63799d1ac3df, type: 3}
+  - DryDirt: {fileID: 21300000, guid: 1554278e32855e74a8ef6e7c5723af33, type: 3}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

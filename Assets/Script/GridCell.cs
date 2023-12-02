@@ -29,6 +29,12 @@ public class GridCell : MonoBehaviour
 
     public SpriteRenderer spriteRenderer;
     public Transform CurPosition;
+    public Sprite GrassSeed;
+    public Sprite GrassGrown;
+    public Sprite CarrotSeed;
+    public Sprite CarrotGrown;
+    public Sprite WetDirt;
+    public Sprite DryDirt;
 
     // Define the structure to store cell state
     public CellState cellState;
@@ -65,26 +71,33 @@ void Start()
         {
             if (cellState.growthLevel == GrowthLevel.Seed)
             {
+                gameObject.GetComponent<SpriteRenderer>().sprite = GrassSeed; // Light green for seed
                 spriteRenderer.color = new Color(0f, 1f, 0f, 0.5f); // Light green for seed
+                
             }
             else
             {
+                gameObject.GetComponent<SpriteRenderer>().sprite = GrassGrown; // Full green for grown
                 spriteRenderer.color = Color.green; // Full green for grown
+                
             }
         }
         else if (cellState.plantType == PlantType.Carrot)
         {
             if (cellState.growthLevel == GrowthLevel.Seed)
             {
+                gameObject.GetComponent<SpriteRenderer>().sprite = CarrotSeed; // Light orange for seed
                 spriteRenderer.color = new Color(1f, 0.647f, 0f, 0.5f); // Light orange for seed
             }
             else
             {
+                gameObject.GetComponent<SpriteRenderer>().sprite = CarrotGrown; 
                 spriteRenderer.color = new Color(1f, 0.647f, 0f); // Full orange for grown
             }
         }
         else if (cellState.water && cellState.sun)
         {
+            //gameObject.GetComponent<SpriteRenderer>().sprite = WetDirt; // Light orange for seed
             spriteRenderer.color = new Color(0.545f, 0.271f, 0.075f); // Brown color
         }
         else if (cellState.water)
