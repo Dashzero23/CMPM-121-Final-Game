@@ -71,14 +71,11 @@ void Start()
         {
             if (cellState.growthLevel == GrowthLevel.Seed)
             {
-                gameObject.GetComponent<SpriteRenderer>().sprite = GrassSeed; // Light green for seed
-                spriteRenderer.color = new Color(0f, 1f, 0f, 0.5f); // Light green for seed
-                
+                spriteRenderer.sprite = GrassSeed;              
             }
             else
             {
-                gameObject.GetComponent<SpriteRenderer>().sprite = GrassGrown; // Full green for grown
-                spriteRenderer.color = Color.green; // Full green for grown
+                spriteRenderer.sprite = GrassGrown;
                 
             }
         }
@@ -86,31 +83,20 @@ void Start()
         {
             if (cellState.growthLevel == GrowthLevel.Seed)
             {
-                gameObject.GetComponent<SpriteRenderer>().sprite = CarrotSeed; // Light orange for seed
-                spriteRenderer.color = new Color(1f, 0.647f, 0f, 0.5f); // Light orange for seed
+                spriteRenderer.sprite = CarrotSeed; // Light orange for seed
             }
             else
             {
-                gameObject.GetComponent<SpriteRenderer>().sprite = CarrotGrown; 
-                spriteRenderer.color = new Color(1f, 0.647f, 0f); // Full orange for grown
+                spriteRenderer.sprite = CarrotGrown; 
             }
-        }
-        else if (cellState.water && cellState.sun)
-        {
-            //gameObject.GetComponent<SpriteRenderer>().sprite = WetDirt; // Light orange for seed
-            spriteRenderer.color = new Color(0.545f, 0.271f, 0.075f); // Brown color
         }
         else if (cellState.water)
         {
-            spriteRenderer.color = Color.blue;
-        }
-        else if (cellState.sun)
-        {
-            spriteRenderer.color = Color.yellow;
+            spriteRenderer.sprite = WetDirt;
         }
         else
         {
-            spriteRenderer.color = Color.white;
+            spriteRenderer.sprite = DryDirt;
         }
     }
 
