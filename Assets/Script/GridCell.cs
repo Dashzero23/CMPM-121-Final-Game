@@ -41,6 +41,8 @@ public class GridCell : MonoBehaviour
 
     // Add a list to store cell state history
     public List<CellState> cellStateHistory = new List<CellState>();
+    public List<CellState> redoCellStateHistory = new List<CellState>();
+
 void Start()
 {
     spriteRenderer = GetComponent<SpriteRenderer>();
@@ -129,8 +131,25 @@ void Start()
     {
         if (cellStateHistory.Count > 1)
         {
-            // Remove the last state (current state) and apply the previous state
+            // Remove the last state (current state) and move it to redo history
+            redoCellStateHistory.Add(cellStateHistory[cellStateHistory.Count - 1]);
             cellStateHistory.RemoveAt(cellStateHistory.Count - 1);
+
+            // Apply the previous state
+            cellState = cellStateHistory[cellStateHistory.Count - 1];
+            UpdateCellVisuals();
+        }
+    }
+
+    public void RedoCell()
+    {
+        if (redoCellStateHistory.Count > 0)
+        {
+            // Move the last state from redo history to cell state history
+            cellStateHistory.Add(redoCellStateHistory[redoCellStateHistory.Count - 1]);
+            redoCellStateHistory.RemoveAt(redoCellStateHistory.Count - 1);
+
+            // Apply the state
             cellState = cellStateHistory[cellStateHistory.Count - 1];
             UpdateCellVisuals();
         }

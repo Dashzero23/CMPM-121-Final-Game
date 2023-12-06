@@ -36,4 +36,12 @@ public class GameManager : MonoBehaviour
             gridCell.UndoCell();
         }
     }
+
+    public void RedoFunction()
+    {
+        foreach (var gridCell in farmGrid.FarmGridList) {
+            gridCell.RedoCell();
+        }
+    }
 }
+
