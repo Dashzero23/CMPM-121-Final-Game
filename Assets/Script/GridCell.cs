@@ -122,7 +122,7 @@ void Start()
         return new Vector2Int(x, y);
     }
 
-        void SaveCellState()
+    void SaveCellState()
     {
         cellStateHistory.Add(cellState);
     }

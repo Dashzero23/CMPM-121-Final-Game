@@ -6,28 +6,35 @@ public class PlayerMovement : MonoBehaviour
 {
     public float gridSize = 1f;
     public GameManager GM;
+    public SaveSystem saveSys;
     public FarmGrid farmScript;
     void Update()
     {
-        HandleInput();
+        if(!GM.MovementDisabled) {
+            HandleInput();
+        }
     }
 
     void HandleInput()
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
+            saveSys.SaveGame("AutoSave");        
             TeleportPlayer(Vector3.up);
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
+            saveSys.SaveGame("AutoSave"); 
             TeleportPlayer(Vector3.left);
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
+            saveSys.SaveGame("AutoSave"); 
             TeleportPlayer(Vector3.down);
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
+            saveSys.SaveGame("AutoSave"); 
             TeleportPlayer(Vector3.right);
         }
     }
@@ -43,7 +50,7 @@ public class PlayerMovement : MonoBehaviour
         transform.position = newPosition;
 
         farmScript.UpdateAllCells();
-        GM.turn++;
+        //GM.turn++;
         GM.CheckForWinCondition();
     }
 }

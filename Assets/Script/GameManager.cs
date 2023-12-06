@@ -5,8 +5,8 @@ using UnityEngine;
 public class GameManager : MonoBehaviour
 {
     public FarmGrid farmGrid; // Reference to your FarmGrid script
-
-    public int turn = 0;
+    public bool MovementDisabled = false;
+    //public int turn = 0;
     public void CheckForWinCondition()
     {
         int grownCarrotCount = 0;
@@ -42,6 +42,16 @@ public class GameManager : MonoBehaviour
         foreach (var gridCell in farmGrid.FarmGridList) {
             gridCell.RedoCell();
         }
+    }
+
+    public void DisableMovement()
+    {
+        MovementDisabled = true;
+    }
+
+    public void EnableMovement()
+    {
+        MovementDisabled = false;
     }
 }
 

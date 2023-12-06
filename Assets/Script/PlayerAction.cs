@@ -3,18 +3,21 @@ using UnityEngine;
 public class PlayerAction : MonoBehaviour
 {
     public FarmGrid farmGrid;
+    public GameManager GM;
 
     void Update()
     {
-        if (Input.GetKeyDown(KeyCode.Q))
-        {
-            Debug.Log("Reap() called");
-            Reap();
-        }
-        else if (Input.GetKeyDown(KeyCode.E))
-        {
-            Debug.Log("Sow() called");
-            Sow();
+        if(!GM.MovementDisabled) {
+            if (Input.GetKeyDown(KeyCode.Q))
+            {
+                Debug.Log("Reap() called");
+                Reap();
+            }
+            else if (Input.GetKeyDown(KeyCode.E))
+            {
+                Debug.Log("Sow() called");
+                Sow();
+            }
         }
     }
 
