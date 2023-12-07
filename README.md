@@ -22,7 +22,17 @@ Dash is hoping to improve on his Blender skills while Gabe and Jeevi are looking
 [F0.c] The player can reap/sow the tile they are standing on top of, further info can be seen in Debug.log  
 [F0.d] There are sun and water level and sun is randomly generated/removed every turn, while water is always true once a tile has water once  
 [F0.e] There are 2 type of plants (carrot and grass) and 2 growth level (seed and grown)  
-[F0.f] Currently the plant grow if the tile has both water and sun and the growth level is seed
+[F0.f] Currently the plant grow if the tile has both water and sun and the growth level is seed  
 [F0.g] The play scenario is completed if the player has at least 10 grown carrots  
-## Reflection
+### Reflection
 Our plans changed quite a bit as we shifted Dash into a helper in developing the main mechanics while Gabe is now focused on player interactions for latter requirements. We decided to not use Blender as it would take more time and less efficient than simply using Piskel for 2D arts so Dash can spend more time helping the code side.
+
+## F1 Dev Log
+### How we satisfied the software requirements
+[F0 Tasks] Same as last week, only change was tile has sprite instead of just color  
+[F1.a] My team use SoA style with the struct CellState in the script GridCell and the main array is stored in FarmGrid script, the Undo and Redo array is stored within the GridCell  
+[F1.b] There are an Undo/Redo button and allowed to undo to the beginning and redo til where they are at  
+[F1.c] The player can save the game into any file name and load any file name that is saved locally, and put a Debug.log message when can't find a file when loading  
+[F1.d] There is an AutoSave file that is saved every move the player made, and the player can load it manually using the same load file button  
+### Reflection  
+A lot of changes happen as Dash is now the Engine Lead due to him being very familar with Unity. Jeevi will now be helping with debugging and refining/refactoring the code and Yunjia is focusing on F2 and F3 requirements.
