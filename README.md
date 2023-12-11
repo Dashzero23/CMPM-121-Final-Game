@@ -77,10 +77,10 @@ For our external DSL for scenario design, we used JSon as our pre-exisiting data
 
 In Natural Language:
 1. Training Scenario:
-    - Grid Size: The training scenario is set in a grid of 5 by 5 tiles.
-    - Plant Types: There are two types of plants available, namely "carrot" and "grass."
-    - Win Conditions: To successfully complete the training, you need to have at least 10 carrots.
-    - Instructions: The goal is to collect at least 10 carrots according to the given instructions.
+  - Grid Size: The training scenario is set in a grid of 5 by 5 tiles.
+  - Plant Types: There are two types of plants available, namely "carrot" and "grass."
+  - Win Conditions: To successfully complete the training, you need to have at least 10 carrots.
+  - Instructions: The goal is to collect at least 10 carrots according to the given instructions.
 2. Drought Scenario:
   - Grid Size: The drought scenario takes place in a larger grid of 10 by 10 tiles.
   - Available Plants: Similar to the training scenario, you have access to "carrot" and "grass."
