@@ -82,7 +82,7 @@ In Natural Language:
     -Win Conditions: To successfully complete the training, you need to have at least 10 carrots.
     -Instructions: The goal is to collect at least 10 carrots according to the given instructions.
    
-2.Drought Scenario:
+2. Drought Scenario:
   -Grid Size: The drought scenario takes place in a larger grid of 10 by 10 tiles.
   -Available Plants: Similar to the training scenario, you have access to "carrot" and "grass."
   -Win Conditions: To win during the drought, you need a minimum of 10 carrots, and there should be no grass at all (maximum of 0 grass).
