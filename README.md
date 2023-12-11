@@ -77,17 +77,16 @@ For our external DSL for scenario design, we used JSon as our pre-exisiting data
 
 In Natural Language:
 1. Training Scenario:
-    -Grid Size: The training scenario is set in a grid of 5 by 5 tiles.
-    -Plant Types: There are two types of plants available, namely "carrot" and "grass."
-    -Win Conditions: To successfully complete the training, you need to have at least 10 carrots.
-    -Instructions: The goal is to collect at least 10 carrots according to the given instructions.
-   
+    - Grid Size: The training scenario is set in a grid of 5 by 5 tiles.
+    - Plant Types: There are two types of plants available, namely "carrot" and "grass."
+    - Win Conditions: To successfully complete the training, you need to have at least 10 carrots.
+    - Instructions: The goal is to collect at least 10 carrots according to the given instructions.
 2. Drought Scenario:
-  -Grid Size: The drought scenario takes place in a larger grid of 10 by 10 tiles.
-  -Available Plants: Similar to the training scenario, you have access to "carrot" and "grass."
-  -Win Conditions: To win during the drought, you need a minimum of 10 carrots, and there should be no grass at all (maximum of 0 grass).
-  -Special Events: There are two special events: at the 5th turn, there is a "drought" event, where the water level will be significantly lower and at the 7th turn, a "solar eclipse" occurs, where sun levels will be down. 
-  -Human Instructions: The goal here is to collect all carrots and ensure that there is no grass at all, following the provided instructions.
+  - Grid Size: The drought scenario takes place in a larger grid of 10 by 10 tiles.
+  - Available Plants: Similar to the training scenario, you have access to "carrot" and "grass."
+  - Win Conditions: To win during the drought, you need a minimum of 10 carrots, and there should be no grass at all (maximum of 0 grass).
+  - Special Events: There are two special events: at the 5th turn, there is a "drought" event, where the water level will be significantly lower and at the 7th turn, a "solar eclipse" occurs, where sun levels will be down. 
+  - Instructions: The goal here is to collect all carrots and ensure that there is no grass at all, following the provided instructions.
 
 In simpler terms, for the training scenario, you're aiming to collect a bunch of carrots. In the drought scenario, you not only want to collect carrots but also make sure there's no grass growing, and you'll need to deal with some challenges like a drought and a solar eclipse along the way.
 
