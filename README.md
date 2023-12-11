@@ -1,4 +1,4 @@
-# CMPM-121-Final-Game (Newest Update -F2 Log)
+# CMPM-121-Final-Game (F2 Dev Log Updated)
 ## First Devlog Entry - 11/18/23
 ### Introducing the team
 Code Lead: Jeevithan Mahenthran/Jeevi (https://github.com/Jeeevii)  
