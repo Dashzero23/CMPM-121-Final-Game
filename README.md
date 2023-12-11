@@ -94,3 +94,6 @@ In Natural Language:
 In simpler terms, for the training scenario, you're aiming to collect a bunch of carrots. In the drought scenario, you not only want to collect carrots but also make sure there's no grass growing, and you'll need to deal with some challenges like a drought and a solar eclipse along the way.
 
 ### Reflection
+
+Nothing Changed that much regarding each team memebers tasks, but one thing that I learned from doing the F2 Requirements is that Unity isn't the best for doing internal or External DSLs. Unity primarily uses C# as its scripting language. While C# is a powerful and versatile language, it may not be the best choice for creating dynamic DSLs. DSLs often benefit from a more flexible language with dynamic features, which may be found in languages like Python or JavaScript. These languages allow for more concise and expressive syntax, making it easier to define and execute DSL-like constructs. If we were to start over we might chose a JS-based engine link phaser to create this game. 
+
