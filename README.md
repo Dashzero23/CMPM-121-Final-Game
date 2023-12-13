@@ -29,11 +29,17 @@ Our plans changed quite a bit as we shifted Dash into a helper in developing the
 
 ## F1 Dev Log
 ### How we satisfied the software requirements
-[F0 Tasks] Same as last week, only change was tile has sprite instead of just color  
+[F0.a] The player can move around in a 5x5 grid with WASD  
+[F0.b] The game only updates after the player moved  
+[F0.c] The player can reap/sow the tile they are standing on top of, further info can be seen in Debug.log  
+[F0.d] There are sun and water level and sun is randomly generated/removed every turn, while water is always true once a tile has water once  
+[F0.e] There are 2 type of plants (carrot and grass) and 2 growth level (seed and grown)  
+[F0.f] Currently the plant grow if the tile has both water and sun and the growth level is seed  
+[F0.g] The play scenario is completed if the player has at least 10 grown carrots  
 [F1.a] My team use SoA style with the struct CellState in the script GridCell and the main array is stored in FarmGrid script, the Undo and Redo array is stored within the GridCell  
-[F1.b] There are an Undo/Redo button and allowed to undo to the beginning and redo til where they are at  
-[F1.c] The player can save the game into any file name and load any file name that is saved locally, and put a Debug.log message when can't find a file when loading  
-[F1.d] There is an AutoSave file that is saved every move the player made, and the player can load it manually using the same load file button  
+[F1.b] There are an Undo/Redo button and allowed to undo to the beginning and redo til where they are at. The undo/redo array is stored as array of arrays, where the arrays inside are the current state of the game (status of every grid cell on the board), once the player made a move, it pushes the current state array into the undo array, and remove from it when undo is used, the recently undo'ed array is pushed into redo, and if redo is called, the process happen vice versa  
+[F1.c] The player can save the game into any file name and load any file name that is saved locally, and put a Debug.log message when can't find a file when loading. The save method is simply converting the undo/redo array and the current state of the game into string and int since JSON can't read my customized struct as input. I made Serialized Data so I can store my own struct in order to store all the data I wanted, then I made a list of arrays, where the arrays are either current state of the game (single array) or undo/redo array (array or arrays). For loading saved file, I do the save file but in reversed, and applied the save data into the current game's variable, overwriting and updating all arrays and cell status.  
+[F1.d] There is an AutoSave file that is saved every move the player made, and the player can load it manually using the same load file button. I simply call the save file function described in F1.c everytime the player move and the file name is AutoSave.   
 ### Reflection  
 A lot of changes happen as Dash is now the Engine Lead due to him being very familar with Unity. Jeevi will now be helping with debugging and refining/refactoring the code and Yunjia is focusing on F2 and F3 requirements.
 
