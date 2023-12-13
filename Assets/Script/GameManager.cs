@@ -1,13 +1,20 @@
 using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
+using UnityEngine.SceneManagement;
+using UnityEngine.UI;
 
 public class GameManager : MonoBehaviour
 {
     public FarmGrid farmGrid; // Reference to your FarmGrid script
+    public Button winRes;
     public bool MovementDisabled = false;
 
     //public int turn = 0;
+    public void Start()
+    {
+        winRes.gameObject.SetActive(false);
+    }
     public void CheckForWinCondition()
     {
         int grownCarrotCount = 0;
@@ -23,7 +30,10 @@ public class GameManager : MonoBehaviour
         if (grownCarrotCount >= 10)
         {
             Debug.Log("You win!");
-            // Implement win logic here
+            DisableMovement();
+            Debug.Log("winRes button state: " + winRes.enabled);
+            winRes.gameObject.SetActive(true);
+            Debug.Log("winRes button state after enabling: " + winRes.enabled);
         }
         else
         {
@@ -53,6 +63,15 @@ public class GameManager : MonoBehaviour
     public void EnableMovement()
     {
         MovementDisabled = false;
+    }
+    
+    public void RestartScene()
+    {
+        // Get the current scene index
+        int currentSceneIndex = SceneManager.GetActiveScene().buildIndex;
+
+        // Reload the current scene
+        SceneManager.LoadScene(currentSceneIndex);
     }
 }
 

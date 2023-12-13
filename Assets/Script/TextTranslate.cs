@@ -9,6 +9,9 @@ public class TextTranslate : MonoBehaviour
 {
     // Start is called before the first frame update
     public GameManager GM;
+    public TextMeshProUGUI instruction;
+    public TextMeshProUGUI winCon;
+    public TextMeshProUGUI winRes;
     public TextMeshProUGUI languageText;
     public TextMeshProUGUI undoText;
     public TextMeshProUGUI redoText;
@@ -18,7 +21,7 @@ public class TextTranslate : MonoBehaviour
     public TextMeshProUGUI loadFieldText;
 
     public TMP_FontAsset defaultFont;
-    public TMP_FontAsset japaneseFont;
+    public TMP_FontAsset chineseFont;
     private Dictionary<string, Dictionary<string, string>> translations = new Dictionary<string, Dictionary<string, string>>();
 
     private string currentLanguage = "English"; // Default language
@@ -26,9 +29,9 @@ public class TextTranslate : MonoBehaviour
     void Start()
     {
         // Initialize translations for each language
-        translations.Add("English", new Dictionary<string, string>() { {"Language", "English"}, {"Undo", "Undo"}, {"Redo", "Redo"}, {"Save", "Save"}, {"Load", "Load"}, {"SaveField", "Enter save name"}, {"LoadField", "Enter load name"} });
-        translations.Add("Vietnamese", new Dictionary<string, string>() { {"Language", "Tiếng Việt"}, {"Undo", "Hoàn tác"}, {"Redo", "Làm lại"}, {"Save", "Lưu"}, {"Load", "Tải"}, {"SaveField", "Nhập tên lưu"}, {"LoadField", "Nhập tên tải"} });
-        translations.Add("Chinese", new Dictionary<string, string>() { {"Language", "语言"}, {"Undo", "撤销"}, {"Redo", "重做"}, {"Save", "保存"}, {"Load", "加载"}, {"SaveField", "创造存档名"}, {"LoadField", "输入存档名"} });
+        translations.Add("English", new Dictionary<string, string>() { {"Language", "English"}, {"Undo", "Undo"}, {"Redo", "Redo"}, {"Save", "Save"}, {"Load", "Load"}, {"SaveField", "Enter save name"}, {"LoadField", "Enter load name"}, {"Instruction", "Use WASD to move around, Q to reap crop, E to sow carrot"}, {"WinCon", "Have 10 carrots on the field to win"}, {"WinRes", "You Win!\nClick to restart"} });
+        translations.Add("Vietnamese", new Dictionary<string, string>() { {"Language", "Tiếng Việt"}, {"Undo", "Hoàn tác"}, {"Redo", "Làm lại"}, {"Save", "Lưu"}, {"Load", "Tải"}, {"SaveField", "Nhập tên lưu"}, {"LoadField", "Nhập tên tải"}, {"Instruction", "Dùng WASD để di chuyển, Q để thu hoạch, E trồng cà rốt"}, {"WinCon", "Trồng 10 cà rốt trên ruộng để thắng"}, {"WinRes", "Bạn Thắng!\nNhấn để chơi lại"} });
+        translations.Add("Chinese", new Dictionary<string, string>() { {"Language", "语言"}, {"Undo", "撤销"}, {"Redo", "重做"}, {"Save", "保存"}, {"Load", "加载"}, {"SaveField", "创造存档名"}, {"LoadField", "输入存档名"}, {"Instruction", ""}, {"WinCon", ""}, {"WinRes", ""} });
 
         // Set initial language
         UpdateLanguageUI();
@@ -53,6 +56,9 @@ public class TextTranslate : MonoBehaviour
         {
             UpdateFontBasedOnLanguage();
             // Update text fields based on the dictionary
+            instruction.text = currentLanguageDict["Instruction"];
+            winCon.text = currentLanguageDict["WinCon"];
+            winRes.text = currentLanguageDict["WinRes"];
             languageText.text = currentLanguageDict["Language"];
             undoText.text = currentLanguageDict["Undo"];
             redoText.text = currentLanguageDict["Redo"];
@@ -79,7 +85,7 @@ public class TextTranslate : MonoBehaviour
                 SetFonts(defaultFont);
                 break;
             case "Chinese":
-                SetFonts(japaneseFont);
+                SetFonts(chineseFont);
                 break;
             default:
                 // Set a default font if needed

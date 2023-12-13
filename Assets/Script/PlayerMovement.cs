@@ -19,26 +19,38 @@ public class PlayerMovement : MonoBehaviour
     {
         if (Input.GetKeyDown(KeyCode.W))
         {
-            saveSys.SaveGame("AutoSave");        
-            TeleportPlayer(Vector3.up);
+            moveUp();
         }
         else if (Input.GetKeyDown(KeyCode.A))
         {
-            saveSys.SaveGame("AutoSave"); 
-            TeleportPlayer(Vector3.left);
+            moveLeft();
         }
         else if (Input.GetKeyDown(KeyCode.S))
         {
-            saveSys.SaveGame("AutoSave"); 
-            TeleportPlayer(Vector3.down);
+            moveDown();
         }
         else if (Input.GetKeyDown(KeyCode.D))
         {
-            saveSys.SaveGame("AutoSave"); 
-            TeleportPlayer(Vector3.right);
+            moveRight();
         }
     }
 
+    public void moveUp() {
+        saveSys.SaveGame("AutoSave");        
+        TeleportPlayer(Vector3.up);
+    }
+    public void moveDown() {
+        saveSys.SaveGame("AutoSave"); 
+        TeleportPlayer(Vector3.down);        
+    }
+    public void moveLeft() {
+        saveSys.SaveGame("AutoSave"); 
+        TeleportPlayer(Vector3.left);
+    }
+    public void moveRight() {
+        saveSys.SaveGame("AutoSave"); 
+        TeleportPlayer(Vector3.right);
+    }
     void TeleportPlayer(Vector3 direction)
     {
         Vector3 newPosition = transform.position + direction * gridSize;

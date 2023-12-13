@@ -21,7 +21,7 @@ public class PlayerAction : MonoBehaviour
         }
     }
 
-    void Reap()
+    public void Reap()
     {
         // Get the player's current position
         Vector3 playerPosition = transform.position;
@@ -44,7 +44,7 @@ public class PlayerAction : MonoBehaviour
         }
     }
 
-    void Sow()
+    public void Sow()
     {
         // Assume you want to plant a light orange tile at the player's current position
         Vector3 playerPosition = transform.position;
