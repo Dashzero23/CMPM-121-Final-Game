@@ -6,6 +6,7 @@ public class GameManager : MonoBehaviour
 {
     public FarmGrid farmGrid; // Reference to your FarmGrid script
     public bool MovementDisabled = false;
+
     //public int turn = 0;
     public void CheckForWinCondition()
     {
