@@ -28,7 +28,7 @@ public class TextTranslate : MonoBehaviour
         // Initialize translations for each language
         translations.Add("English", new Dictionary<string, string>() { {"Language", "English"}, {"Undo", "Undo"}, {"Redo", "Redo"}, {"Save", "Save"}, {"Load", "Load"}, {"SaveField", "Enter save name"}, {"LoadField", "Enter load name"} });
         translations.Add("Vietnamese", new Dictionary<string, string>() { {"Language", "Tiếng Việt"}, {"Undo", "Hoàn tác"}, {"Redo", "Làm lại"}, {"Save", "Lưu"}, {"Load", "Tải"}, {"SaveField", "Nhập tên lưu"}, {"LoadField", "Nhập tên tải"} });
-        translations.Add("Chinese", new Dictionary<string, string>() { {"Language", ""}, {"Undo", ""}, {"Redo", ""}, {"Save", ""}, {"Load", ""}, {"SaveField", ""}, {"LoadField", ""} });
+        translations.Add("Chinese", new Dictionary<string, string>() { {"Language", "语言"}, {"Undo", "撤销"}, {"Redo", "重做"}, {"Save", "保存"}, {"Load", "加载"}, {"SaveField", "创造存档名"}, {"LoadField", "输入存档名"} });
 
         // Set initial language
         UpdateLanguageUI();
@@ -78,7 +78,7 @@ public class TextTranslate : MonoBehaviour
             case "Vietnamese":
                 SetFonts(defaultFont);
                 break;
-            case "Japanese":
+            case "Chinese":
                 SetFonts(japaneseFont);
                 break;
             default:

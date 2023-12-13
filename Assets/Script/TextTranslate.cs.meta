@@ -3,7 +3,17 @@ guid: 7a245914483fc7d43b2a545ea9008779
 MonoImporter:
   externalObjects: {}
   serializedVersion: 2
-  defaultReferences: []
+  defaultReferences:
+  - GM: {instanceID: 0}
+  - languageText: {instanceID: 0}
+  - undoText: {instanceID: 0}
+  - redoText: {instanceID: 0}
+  - saveText: {instanceID: 0}
+  - saveFieldText: {instanceID: 0}
+  - loadText: {instanceID: 0}
+  - loadFieldText: {instanceID: 0}
+  - defaultFont: {fileID: 11400000, guid: 5965837c9443df94f827513c3cd7e34b, type: 2}
+  - japaneseFont: {fileID: 11400000, guid: 5965837c9443df94f827513c3cd7e34b, type: 2}
   executionOrder: 0
   icon: {instanceID: 0}
   userData: 

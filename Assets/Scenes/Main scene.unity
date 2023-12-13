@@ -1016,6 +1016,8 @@ MonoBehaviour:
   saveFieldText: {fileID: 1116033293}
   loadText: {fileID: 466422080}
   loadFieldText: {fileID: 1410735170}
+  defaultFont: {fileID: 11400000, guid: 737e864186a9dd245a1b3c7e07cd878e, type: 2}
+  japaneseFont: {fileID: 11400000, guid: 5965837c9443df94f827513c3cd7e34b, type: 2}
 --- !u!1 &543945113
 GameObject:
   m_ObjectHideFlags: 0
