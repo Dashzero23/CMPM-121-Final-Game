@@ -4,7 +4,6 @@ using UnityEngine;
 using System.IO;
 using UnityEngine.UI;
 using TMPro;
-
 public class TextTranslate : MonoBehaviour
 {
     // Start is called before the first frame update
@@ -21,6 +20,7 @@ public class TextTranslate : MonoBehaviour
     public TextMeshProUGUI loadFieldText;
 
     public TMP_FontAsset defaultFont;
+    public TMP_FontAsset arabicFont;
     public TMP_FontAsset chineseFont;
     private Dictionary<string, Dictionary<string, string>> translations = new Dictionary<string, Dictionary<string, string>>();
 
@@ -29,10 +29,36 @@ public class TextTranslate : MonoBehaviour
     void Start()
     {
         // Initialize translations for each language
-        translations.Add("English", new Dictionary<string, string>() { {"Language", "English"}, {"Undo", "Undo"}, {"Redo", "Redo"}, {"Save", "Save"}, {"Load", "Load"}, {"SaveField", "Enter save name"}, {"LoadField", "Enter load name"}, {"Instruction", "Use WASD to move around, Q to reap crop, E to sow carrot"}, {"WinCon", "Have 10 carrots on the field to win"}, {"WinRes", "You Win!\nClick to restart"} });
-        translations.Add("Vietnamese", new Dictionary<string, string>() { {"Language", "Tiếng Việt"}, {"Undo", "Hoàn tác"}, {"Redo", "Làm lại"}, {"Save", "Lưu"}, {"Load", "Tải"}, {"SaveField", "Nhập tên lưu"}, {"LoadField", "Nhập tên tải"}, {"Instruction", "Dùng WASD để di chuyển, Q để thu hoạch, E trồng cà rốt"}, {"WinCon", "Trồng 10 cà rốt trên ruộng để thắng"}, {"WinRes", "Bạn Thắng!\nNhấn để chơi lại"} });
-        translations.Add("Chinese", new Dictionary<string, string>() { {"Language", "语言"}, {"Undo", "撤销"}, {"Redo", "重做"}, {"Save", "保存"}, {"Load", "加载"}, {"SaveField", "创造存档名"}, {"LoadField", "输入存档名"}, {"Instruction", ""}, {"WinCon", ""}, {"WinRes", ""} });
-
+        translations.Add("English", new Dictionary<string, string>() { 
+            {"Language", "English"}, 
+            {"Undo", "Undo"}, 
+            {"Redo", "Redo"}, 
+            {"Save", "Save"}, 
+            {"Load", "Load"}, 
+            {"SaveField", "Enter save name"}, 
+            {"LoadField", "Enter load name"}, 
+            {"Instruction", "Use WASD to move around, Q to reap crop, E to sow carrot"}, 
+            {"WinCon", "Have 10 carrots on the field to win"}, 
+            {"WinRes", "You Win!\nClick to restart"} });
+        translations.Add("Chinese", new Dictionary<string, string>() { 
+            {"Language", "语言"}, {"Undo", "撤销"}, 
+            {"Redo", "重做"}, {"Save", "保存"}, 
+            {"Load", "加载"}, {"SaveField", "创造存档名"}, 
+            {"LoadField", "输入存档名"}, 
+            {"Instruction", ""}, 
+            {"WinCon", ""}, 
+            {"WinRes", ""} });
+        translations.Add("Arabic", new Dictionary<string, string>() {
+            {"Language", "العربية"},
+            {"Undo", "تراجع"},
+            {"Redo", "إعادة"},
+            {"Save", "حفظ"},
+            {"Load", "تحميل"},
+            {"SaveField", "أدخل اسم الحفظ"},
+            {"LoadField", "أدخل اسم التحميل"},
+            {"Instruction", "استخدم WASD للتحرك، Q للحصاد، E لزراعة الجزر"},
+            {"WinCon", "امتلك 10 جزر في الحقل للفوز"},
+            {"WinRes", "أنت فائز!\nانقر لإعادة التشغيل"}});
         // Set initial language
         UpdateLanguageUI();
     }
@@ -66,6 +92,7 @@ public class TextTranslate : MonoBehaviour
             loadText.text = currentLanguageDict["Load"];
             saveFieldText.text = currentLanguageDict["SaveField"];
             loadFieldText.text = currentLanguageDict["LoadField"];
+            
         }
         else
         {
@@ -81,8 +108,8 @@ public class TextTranslate : MonoBehaviour
             case "English":
                 SetFonts(defaultFont);
                 break;
-            case "Vietnamese":
-                SetFonts(defaultFont);
+            case "Arabic":
+                SetFonts(arabicFont);
                 break;
             case "Chinese":
                 SetFonts(chineseFont);
