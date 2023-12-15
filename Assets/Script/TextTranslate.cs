@@ -45,9 +45,9 @@ public class TextTranslate : MonoBehaviour
             {"Redo", "重做"}, {"Save", "保存"}, 
             {"Load", "加载"}, {"SaveField", "创造存档名"}, 
             {"LoadField", "输入存档名"}, 
-            {"Instruction", ""}, 
-            {"WinCon", ""}, 
-            {"WinRes", ""} });
+            {"Instruction", "指引"}, 
+            {"WinCon", "胜利条件"}, 
+            {"WinRes", "胜利结果"} });
         translations.Add("Arabic", new Dictionary<string, string>() {
             {"Language", "العربية"},
             {"Undo", "تراجع"},
